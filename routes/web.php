@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controller\CobaController;
+use App\Http\Controllers\cobacontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/coba', function () {
     return view('coba');
 });
 
 Route::get('/coba/{no}', function ($no) {
-    return 'coba ke- '.$no;
+    return ' Coba ke- '. $no;
+
 });
+
 Route::get('/test', [cobacontroller::class, 'index']);
 Route::get('/test/{ke}', [cobacontroller::class, 'urutan']);
