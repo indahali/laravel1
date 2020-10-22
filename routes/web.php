@@ -21,10 +21,7 @@ Route::get('/coba', function () {
     return view('coba');
 });
 
-Route::get('/coba/{no}', function ($no) {
-    return ' Coba ke- '. $no;
-
-});
+Route::get('/coba/{no}', [cobacontroller::class, 'coba']);
 
 Route::get('/test', [cobacontroller::class, 'index']);
-Route::get('/test/{ke}', [cobacontroller::class, 'urutan']);
+route::get('/test/{ke}', [cobacontroller::class, "urutan"]);
