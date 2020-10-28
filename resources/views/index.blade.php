@@ -20,4 +20,4 @@
 <div>
 {{ $friends->links()}} 
 </div>
-@endsection
+@endsection 
