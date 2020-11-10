@@ -1,17 +1,23 @@
+<?php
+
+namespace App\Http\Controllers;
+use App\models\friends;
+
+use Illuminate\Http\Request;
+
+class cobacontroller extends controller
+{
+    
 public function index()
 {
-    $friends = friends::paginate(3);
     $friends = friends::orderBy('id', 'desc') -> paginate(3);
 
-    return view('index', compact('friends'));
     return view('friends.index', compact('friends'));
 }
 public function create()
 {
-    return view('create');
     return view('friends.create');
 }
-public function store(Request $request )
 public function store(Request $request)
 {
 
@@ -26,7 +32,6 @@ public function store(Request $request)
 
     $friends = new friends;
 
-    $friends->name = $request->nama; 
     $friends->nama = $request->nama; 
     $friends->no_tlp = $request->no_tlp; 
     $friends->alamat = $request->alamat;
@@ -66,3 +71,6 @@ public function store(Request $request)
         friends::find($id)->delete();
         return redirect('/');
     }
+
+
+}
