@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Cobaaa')
+@section('title','cobaaaaaaa')
 
 @section('content')
-    Urutan Ke - {{ $ke }}
+    Urutan ke - {{ $ke }}
 @endsection
+  
+
